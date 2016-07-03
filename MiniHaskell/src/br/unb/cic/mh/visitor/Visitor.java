@@ -5,6 +5,7 @@ import br.unb.cic.mh.ExpressaoIfThenElse;
 import br.unb.cic.mh.ExpressaoLet;
 import br.unb.cic.mh.ExpressaoRefId;
 import br.unb.cic.mh.ExpressaoSoma;
+import br.unb.cic.mh.ExpressaoSubtracao;
 import br.unb.cic.mh.ValorBooleano;
 import br.unb.cic.mh.ValorInteiro;
 
@@ -16,4 +17,6 @@ public interface Visitor {
 	public void visitar(ExpressaoAplicacao exp);
 	public void visitar(ValorInteiro exp);
 	public void visitar(ValorBooleano exp);
+	public void visitar(ExpressaoSubtracao expressaoSubtracao);
+	
 }
