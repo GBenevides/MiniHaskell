@@ -2,9 +2,13 @@ package br.unb.cic.mh;
 
 import br.unb.cic.mh.visitor.Visitor;
 
-public class ExpressaoSoma extends ExpressaoBinaria {
+public class ExpressaoIgualdade extends ExpressaoBinaria{
+	
+	//	Tipagem
+	//	Comparando inteiro com inteiro...
+	//	Retornando booleano.
 
-	public ExpressaoSoma(Expressao s1, Expressao s2) {
+	public ExpressaoIgualdade(Expressao s1, Expressao s2) {
 		super(s1, s2);
 	}
 
@@ -13,6 +17,9 @@ public class ExpressaoSoma extends ExpressaoBinaria {
 		Tipo t1 = sub1.tipo();
 		Tipo t2 = sub2.tipo();
 		
+//		if(t1.equals(Tipo.BOOLEANO) && t2.equals(Tipo.BOOLEANO)) {
+//			return Tipo.BOOLEANO;
+//		} TODO: Igualdade - Ver tipagem dessa expressao.
 		if(t1.equals(Tipo.INTEIRO) && t2.equals(Tipo.INTEIRO)) {
 			return Tipo.INTEIRO;
 		}
@@ -21,7 +28,7 @@ public class ExpressaoSoma extends ExpressaoBinaria {
 
 	@Override
 	public boolean checarTipo() {
-		return tipo().equals(Tipo.INTEIRO);
+		return tipo().equals(Tipo.BOOLEANO);
 	}
 
 	@Override
@@ -29,11 +36,12 @@ public class ExpressaoSoma extends ExpressaoBinaria {
 		ValorInteiro v1 = (ValorInteiro)sub1.avaliar();
 		ValorInteiro v2 = (ValorInteiro)sub2.avaliar();
 		
-		return new ValorInteiro(v1.getValor() + v2.getValor());
+		return new ValorBooleano(v1.getValor() == v2.getValor());
 	}
 
 	@Override
 	public void aceitar(Visitor v) {
 		v.visitar(this);
 	}
+
 }
