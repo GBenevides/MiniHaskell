@@ -23,4 +23,16 @@ public class TesteExpressaoAplicacao extends TesteUtil {
 		//Era pra ter dado 6
 		Assert.assertEquals(new ValorInteiro(6), ap.avaliar());
 	}
+	
+//	@Test
+//	public void testeFuncaoFatorial() {
+//		//Define o tipo de funcao
+//		DeclFuncao fat = (new DeclFuncao()).nome("fat")
+//				.argumento(new ArgumentoFormal("x", Tipo.INTEIRO))
+//				.corpo(If(igual(ref("x"),vi(0)), let("x",vi(0),null), fat(ref("x = x-1"))));
+//				// TODO: Fat - Funcao recursiva...
+//				
+//				
+//	} // TODO: Fat - Muito louco!!
+	
 }

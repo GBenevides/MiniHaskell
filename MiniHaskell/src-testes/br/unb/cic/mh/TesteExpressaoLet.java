@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class TesteExpressaoLet {
+public class TesteExpressaoLet extends TesteUtil{
 
 	@Test
 	public void testeExpressaoLetSimples() {
@@ -26,20 +26,24 @@ public class TesteExpressaoLet {
 		//let y = 10 in let x = 5 in x + y
 		ExpressaoLet letExterno = new ExpressaoLet("y", vi(10), letInterno);
 		
+		//let x = 10 in let x = 5 in x + x
+		ExpressaoLet letUlt = new ExpressaoLet("x", vi(10), new ExpressaoLet("x", vi(5), soma(ref("x"), ref("x"))));		
 		
 		assertEquals(vi(15), letExterno.avaliar());
+		assertEquals(vi(10), letUlt.avaliar());
 	}
 	
-	public ExpressaoSoma soma(Expressao exp1, Expressao exp2) {
-		return new ExpressaoSoma(exp1, exp2);
-	}
-	
-	public ValorInteiro vi(Integer v) {
-		return new ValorInteiro(v);
-	}
-	
-	public ExpressaoRefId ref(String id) {
-		return new ExpressaoRefId(id);
-	}
+//	
+//	public ExpressaoSoma soma(Expressao exp1, Expressao exp2) {
+//		return new ExpressaoSoma(exp1, exp2);
+//	}
+//	
+//	public ValorInteiro vi(Integer v) {
+//		return new ValorInteiro(v);
+//	}
+//	
+//	public ExpressaoRefId ref(String id) {
+//		return new ExpressaoRefId(id);
+//	}
 
 }

@@ -1,7 +1,5 @@
 package br.unb.cic.mh;
 
-import static org.junit.Assert.*;
-
 import org.junit.Assert;
 
 import org.junit.Test;
@@ -37,7 +35,7 @@ public class TesteExpressaoIgualdade {
 		boolean expectedRes = false; //Resultado esperado
 		
 		Assert.assertEquals(new Boolean(false), res.getValor());
-		assertTrue("Assert igualdade inteira simples", (res.getValor() == expectedRes));
+		Assert.assertTrue("Assert igualdade inteira simples", (res.getValor() == expectedRes));
 	}
 	
 //	@Test

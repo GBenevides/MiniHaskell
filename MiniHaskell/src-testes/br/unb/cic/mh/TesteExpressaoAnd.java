@@ -1,7 +1,5 @@
 package br.unb.cic.mh;
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
 
 import org.junit.Assert;
@@ -14,12 +12,13 @@ public class TesteExpressaoAnd {
 		ValorBooleano vTb = new ValorBooleano(true);
 		
 		ExpressaoAnd and = new ExpressaoAnd(vTa, vTb);
+		//and(vTa, vTb);
 		
 		ValorBooleano res = (ValorBooleano)and.avaliar();
 		boolean expectedRes = true;
 
 		Assert.assertEquals(new Boolean(true), res.getValor());
-		assertTrue("Assert and simples", (res.getValor() == expectedRes));		
+		Assert.assertTrue("Assert and simples", (res.getValor() == expectedRes));		
 		
 		//fail("Not yet implemented");
 	}
@@ -37,7 +36,7 @@ public class TesteExpressaoAnd {
 		boolean expectedRes = false;
 		
 		Assert.assertEquals(new Boolean(false), res.getValor());
-		assertTrue("Assert and complexo", (res.getValor() == expectedRes));	
+		Assert.assertTrue("Assert and complexo", (res.getValor() == expectedRes));	
 		
 		//fail("Not yet implemented");
 	}
