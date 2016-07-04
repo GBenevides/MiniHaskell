@@ -45,6 +45,7 @@ public class DeclFuncao {
 	public List<ArgumentoFormal> getArgumentos() {
 		return argumentos;
 	}
+	
 	public Expressao getCorpo() {
 		return corpo;
 	}

@@ -10,6 +10,14 @@ public abstract class TesteUtil {
 		return new ExpressaoSubtracao(exp1, exp2);
 	}
 	
+	public ExpressaoMultiplicacao mult(Expressao exp1, Expressao exp2) {
+		return new ExpressaoMultiplicacao(exp1, exp2);
+	}
+
+	public ExpressaoFatorial fat(Expressao exp1,Expressao exp2) {
+		return new ExpressaoFatorial(exp1, exp2);
+	}
+	
 	public ExpressaoIgualdade igual(Expressao exp1, Expressao exp2) {
 		return new ExpressaoIgualdade(exp1, exp2);
 	}
