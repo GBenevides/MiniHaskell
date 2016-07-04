@@ -4,6 +4,7 @@ import br.unb.cic.mh.ExpressaoAnd;
 import br.unb.cic.mh.ExpressaoAplicacao;
 import br.unb.cic.mh.ExpressaoDiferente;
 import br.unb.cic.mh.ExpressaoDivisao;
+import br.unb.cic.mh.ExpressaoFatorial;
 import br.unb.cic.mh.ExpressaoIfThenElse;
 import br.unb.cic.mh.ExpressaoIgualdade;
 import br.unb.cic.mh.ExpressaoLet;
@@ -40,5 +41,6 @@ public interface Visitor {
 	public void visitar(ExpressaoNot exp);
 	public void visitar(ExpressaoMenor exp);
 	public void visitar(ExpressaoMaior exp);
+	public void visitar(ExpressaoFatorial expressaoFatorial);
 	
 }

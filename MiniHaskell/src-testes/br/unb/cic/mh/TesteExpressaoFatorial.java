@@ -9,9 +9,8 @@ public class TesteExpressaoFatorial {
 	@Test
 	public void testFatorial() {
 		ValorInteiro v5  = new ValorInteiro(5);
-		ValorInteiro v1  = new ValorInteiro(0);
-		
-		ExpressaoFatorial fat = new ExpressaoFatorial(v5, v1);
+	
+		ExpressaoFatorial fat = new ExpressaoFatorial(v5);
 		
 		ValorInteiro res = (ValorInteiro)fat.avaliar();
 		Assert.assertEquals(new Integer(120), res.getValor());

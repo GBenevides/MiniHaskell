@@ -4,6 +4,7 @@ import br.unb.cic.mh.ExpressaoAnd;
 import br.unb.cic.mh.ExpressaoAplicacao;
 import br.unb.cic.mh.ExpressaoDiferente;
 import br.unb.cic.mh.ExpressaoDivisao;
+import br.unb.cic.mh.ExpressaoFatorial;
 import br.unb.cic.mh.ExpressaoIfThenElse;
 import br.unb.cic.mh.ExpressaoIgualdade;
 import br.unb.cic.mh.ExpressaoLet;
@@ -125,6 +126,12 @@ public class PPVisitor implements Visitor {
 		
 	}
 	public void visitar(ExpressaoMaior exp) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void visitar(ExpressaoFatorial expressaoFatorial) {
 		// TODO Auto-generated method stub
 		
 	}

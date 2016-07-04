@@ -14,8 +14,8 @@ public abstract class TesteUtil {
 		return new ExpressaoMultiplicacao(exp1, exp2);
 	}
 
-	public ExpressaoFatorial fat(Expressao exp1,Expressao exp2) {
-		return new ExpressaoFatorial(exp1, exp2);
+	public ExpressaoFatorial fat(Expressao exp1) {
+		return new ExpressaoFatorial(exp1);
 	}
 	
 	public ExpressaoIgualdade igual(Expressao exp1, Expressao exp2) {
