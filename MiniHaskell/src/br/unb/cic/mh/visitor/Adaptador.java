@@ -7,9 +7,16 @@ import br.unb.cic.mh.ExpressaoDivisao;
 import br.unb.cic.mh.ExpressaoIfThenElse;
 import br.unb.cic.mh.ExpressaoIgualdade;
 import br.unb.cic.mh.ExpressaoLet;
+<<<<<<< HEAD
 import br.unb.cic.mh.ExpressaoMaiorIgual;
 import br.unb.cic.mh.ExpressaoMenorIgual;
 import br.unb.cic.mh.ExpressaoMultiplicacao;
+=======
+import br.unb.cic.mh.ExpressaoMaior;
+import br.unb.cic.mh.ExpressaoMenor;
+import br.unb.cic.mh.ExpressaoNot;
+import br.unb.cic.mh.ExpressaoOr;
+>>>>>>> origin/master
 import br.unb.cic.mh.ExpressaoRefId;
 import br.unb.cic.mh.ExpressaoSoma;
 import br.unb.cic.mh.ExpressaoSubtracao;
@@ -59,24 +66,37 @@ public class Adaptador implements Visitor {
 	}
 
 	@Override
+<<<<<<< HEAD
 	public void visitar(ExpressaoMultiplicacao expressaoMultiplicacao) {
+=======
+	public void visitar(ExpressaoOr exp) {
+>>>>>>> origin/master
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
+<<<<<<< HEAD
 	public void visitar(ExpressaoDivisao expressaoDivisao) {
+=======
+	public void visitar(ExpressaoNot exp) {
+>>>>>>> origin/master
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
+<<<<<<< HEAD
 	public void visitar(ExpressaoDiferente expressaoDiferente) {
+=======
+	public void visitar(ExpressaoMenor exp) {
+>>>>>>> origin/master
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
+<<<<<<< HEAD
 	public void visitar(ExpressaoMenorIgual expressaoMenorIgual) {
 		// TODO Auto-generated method stub
 		
@@ -84,6 +104,9 @@ public class Adaptador implements Visitor {
 
 	@Override
 	public void visitar(ExpressaoMaiorIgual expressaoMaiorIgual) {
+=======
+	public void visitar(ExpressaoMaior exp) {
+>>>>>>> origin/master
 		// TODO Auto-generated method stub
 		
 	}

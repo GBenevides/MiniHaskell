@@ -14,6 +14,8 @@ public class TesteExpressaoAnd {
 		ExpressaoAnd and = new ExpressaoAnd(vTa, vTb);
 		//and(vTa, vTb);
 		
+		// Teste: (true && true)
+		
 		ValorBooleano res = (ValorBooleano)and.avaliar();
 		boolean expectedRes = true;
 
@@ -31,6 +33,8 @@ public class TesteExpressaoAnd {
 		
 		ExpressaoAnd and1 = new ExpressaoAnd(vTa, vTb);
 		ExpressaoAnd and2 = new ExpressaoAnd(and1, vF);
+		
+		// Teste: ((true && true) && false)
 		
 		ValorBooleano res = (ValorBooleano)and2.avaliar();
 		boolean expectedRes = false;
