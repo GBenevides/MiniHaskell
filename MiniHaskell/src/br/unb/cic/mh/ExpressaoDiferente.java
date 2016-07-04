@@ -2,15 +2,11 @@ package br.unb.cic.mh;
 
 import br.unb.cic.mh.visitor.Visitor;
 
-public class ExpressaoIgualdade extends ExpressaoBinaria{
-	
-	//	Tipagem
-	//	Comparando inteiro com inteiro...
-	//  Comparando booleano com booleano...
-	//	Retornando booleano.
+public class ExpressaoDiferente extends ExpressaoBinaria{
 
-	public ExpressaoIgualdade(Expressao s1, Expressao s2) {
+	public ExpressaoDiferente(Expressao s1, Expressao s2) {
 		super(s1, s2);
+		// TODO Auto-generated constructor stub
 	}
 
 	@Override
@@ -37,7 +33,7 @@ public class ExpressaoIgualdade extends ExpressaoBinaria{
 		ValorConcreto v1 = (ValorConcreto)sub1.avaliar();
 		ValorConcreto v2 = (ValorConcreto) sub2.avaliar();
 		
-		return new ValorBooleano(v1.getValor() == v2.getValor());
+		return new ValorBooleano(v1.getValor() != v2.getValor());
 	}
 
 	@Override

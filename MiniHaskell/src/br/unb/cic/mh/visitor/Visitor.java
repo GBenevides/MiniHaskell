@@ -2,9 +2,14 @@ package br.unb.cic.mh.visitor;
 
 import br.unb.cic.mh.ExpressaoAnd;
 import br.unb.cic.mh.ExpressaoAplicacao;
+import br.unb.cic.mh.ExpressaoDiferente;
+import br.unb.cic.mh.ExpressaoDivisao;
 import br.unb.cic.mh.ExpressaoIfThenElse;
 import br.unb.cic.mh.ExpressaoIgualdade;
 import br.unb.cic.mh.ExpressaoLet;
+import br.unb.cic.mh.ExpressaoMaiorIgual;
+import br.unb.cic.mh.ExpressaoMenorIgual;
+import br.unb.cic.mh.ExpressaoMultiplicacao;
 import br.unb.cic.mh.ExpressaoRefId;
 import br.unb.cic.mh.ExpressaoSoma;
 import br.unb.cic.mh.ExpressaoSubtracao;
@@ -21,6 +26,11 @@ public interface Visitor {
 	public void visitar(ExpressaoAplicacao exp);
 	public void visitar(ValorInteiro exp);
 	public void visitar(ValorBooleano exp);
-	public void visitar(ExpressaoAnd exp);	
+	public void visitar(ExpressaoAnd exp);
+	public void visitar(ExpressaoMultiplicacao expressaoMultiplicacao);
+	public void visitar(ExpressaoDivisao expressaoDivisao);
+	public void visitar(ExpressaoDiferente expressaoDiferente);
+	public void visitar(ExpressaoMenorIgual expressaoMenorIgual);
+	public void visitar(ExpressaoMaiorIgual expressaoMaiorIgual);	
 	
 }
