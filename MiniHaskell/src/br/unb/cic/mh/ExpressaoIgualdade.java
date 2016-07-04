@@ -33,8 +33,8 @@ public class ExpressaoIgualdade extends ExpressaoBinaria{
 
 	@Override
 	public Valor avaliar() {
-		ValorInteiro v1 = (ValorInteiro)sub1.avaliar();
-		ValorInteiro v2 = (ValorInteiro)sub2.avaliar();
+		ValorConcreto v1 = (ValorConcreto)sub1.avaliar();
+		ValorConcreto v2 = (ValorConcreto) sub2.avaliar();
 		
 		return new ValorBooleano(v1.getValor() == v2.getValor());
 	}
