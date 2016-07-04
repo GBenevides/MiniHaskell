@@ -5,6 +5,10 @@ import br.unb.cic.mh.ExpressaoAplicacao;
 import br.unb.cic.mh.ExpressaoIfThenElse;
 import br.unb.cic.mh.ExpressaoIgualdade;
 import br.unb.cic.mh.ExpressaoLet;
+import br.unb.cic.mh.ExpressaoMaior;
+import br.unb.cic.mh.ExpressaoMenor;
+import br.unb.cic.mh.ExpressaoNot;
+import br.unb.cic.mh.ExpressaoOr;
 import br.unb.cic.mh.ExpressaoRefId;
 import br.unb.cic.mh.ExpressaoSoma;
 import br.unb.cic.mh.ExpressaoSubtracao;
@@ -74,6 +78,30 @@ public class PPVisitor implements Visitor {
 
 	@Override
 	public void visitar(ExpressaoAnd exp) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void visitar(ExpressaoOr exp) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void visitar(ExpressaoNot exp) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void visitar(ExpressaoMenor exp) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void visitar(ExpressaoMaior exp) {
 		// TODO Auto-generated method stub
 		
 	}

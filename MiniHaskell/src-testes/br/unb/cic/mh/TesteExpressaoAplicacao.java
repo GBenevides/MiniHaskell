@@ -26,10 +26,15 @@ public class TesteExpressaoAplicacao extends TesteUtil {
 	
 //	@Test
 //	public void testeFuncaoFatorial() {
+//		//Funcao auxiliar
+//		DeclFuncao dec = (new DeclFuncao()).nome("dec")
+//				.argumento(new ArgumentoFormal("x", Tipo.INTEIRO))
+//				.corpo(sub(ref("x"), vi(1)));
+//		
 //		//Define o tipo de funcao
 //		DeclFuncao fat = (new DeclFuncao()).nome("fat")
 //				.argumento(new ArgumentoFormal("x", Tipo.INTEIRO))
-//				.corpo(If(igual(ref("x"),vi(0)), let("x",vi(0),null), fat(ref("x = x-1"))));
+//				.corpo(If(igual(ref("x"), vi(0)), let("x", vi(0), null), dec));
 //				// TODO: Fat - Funcao recursiva...
 //				
 //				
