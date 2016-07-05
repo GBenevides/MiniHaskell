@@ -2,23 +2,23 @@ package br.unb.cic.mh;
 
 import br.unb.cic.mh.visitor.Visitor;
 
-public class ExpressaoNot implements Expressao {
+public class ExpressaoNot extends ExpressaoUnaria {
 	
 	//	Tipagem
 	//	Invertendo o valor de um booleano...
 	//	Retornando booleano.
 	
-	protected Expressao s1;
+//	protected Expressao s1;
 
-	public ExpressaoNot(Expressao s1) {
-		this.s1 = s1;		
+	public ExpressaoNot(Expressao s) {
+		super(s);		
 	}
 
 	@Override
 	public Tipo tipo() {
-		Tipo t1 = s1.tipo();	
+		Tipo t = sub.tipo();	
 	
-		if(t1.equals(Tipo.BOOLEANO)) {
+		if(t.equals(Tipo.BOOLEANO)) {
 			return Tipo.BOOLEANO;
 		}
 		return Tipo.ERRO;
@@ -31,7 +31,7 @@ public class ExpressaoNot implements Expressao {
 
 	@Override
 	public Valor avaliar() {
-		ValorBooleano v = (ValorBooleano)s1.avaliar();
+		ValorBooleano v = (ValorBooleano)sub.avaliar();
 		
 		return new ValorBooleano(!(v.getValor()));
 	}

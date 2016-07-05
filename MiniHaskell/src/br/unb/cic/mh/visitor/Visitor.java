@@ -20,6 +20,7 @@ import br.unb.cic.mh.ExpressaoSoma;
 import br.unb.cic.mh.ExpressaoSubtracao;
 import br.unb.cic.mh.ValorBooleano;
 import br.unb.cic.mh.ValorInteiro;
+import br.unb.cic.mh.ValorLista;
 
 public interface Visitor {
 	public void visitar(ExpressaoIfThenElse exp);
@@ -42,5 +43,6 @@ public interface Visitor {
 	public void visitar(ExpressaoMenor exp);
 	public void visitar(ExpressaoMaior exp);
 	public void visitar(ExpressaoFatorial expressaoFatorial);
+	public void visitar(ValorLista valorLista);
 	
 }

@@ -52,4 +52,17 @@ public class ExpressaoLet implements Expressao {
 	public void aceitar(Visitor v) {
 		v.visitar(this);
 	}
+	
+	public String getId() {
+		return id;
+	}
+
+	public Expressao getExp() {
+		return exp;
+	}
+
+	public Expressao getCorpo() {
+		return corpo;
+	}
+	
 }

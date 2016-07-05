@@ -2,11 +2,11 @@ package br.unb.cic.mh;
 
 import br.unb.cic.mh.visitor.Visitor;
 
-enum Tipo {
-	BOOLEANO,
-	INTEIRO,
-	ERRO;
-}
+//enum Tipo {
+//	BOOLEANO,
+//	INTEIRO,
+//	ERRO;
+//}
 
 public interface Expressao {
 	public Tipo tipo(); 

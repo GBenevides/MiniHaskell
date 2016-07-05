@@ -90,4 +90,14 @@ public class ExpressaoAplicacao implements Expressao {
 //			contador++;
 //		}		
 	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public List<Expressao> getParametros() {
+		return parametros;
+	}
+	
+	
 }

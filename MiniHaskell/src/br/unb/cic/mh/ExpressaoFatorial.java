@@ -2,16 +2,16 @@ package br.unb.cic.mh;
 
 import br.unb.cic.mh.visitor.Visitor;
 
-public class ExpressaoFatorial implements Expressao{
+public class ExpressaoFatorial extends ExpressaoUnaria {
 
-	protected Expressao s1;
+//	protected Expressao s1;
 
-	public ExpressaoFatorial(Expressao s1) {
-		this.s1 = s1;		
+	public ExpressaoFatorial(Expressao s) {
+		super(s);
 	}
 	@Override
 	public Tipo tipo() {
-		Tipo t1 = s1.tipo();	
+		Tipo t1 = sub.tipo();	
 		
 		if(t1.equals(Tipo.INTEIRO)) {
 			return Tipo.INTEIRO;
@@ -70,7 +70,7 @@ public class ExpressaoFatorial implements Expressao{
 	
 	@Override
 	public Valor avaliar() {
-		ValorInteiro v = (ValorInteiro)s1;
+		ValorInteiro v = (ValorInteiro)sub;
 		ValorInteiro res = (fat(v));
 		return res;
 	}

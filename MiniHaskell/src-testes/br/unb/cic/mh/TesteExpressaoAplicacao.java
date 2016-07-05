@@ -14,12 +14,19 @@ public class TesteExpressaoAplicacao extends TesteUtil {
 		DeclFuncao inc = (new DeclFuncao()).nome("inc")
 				.argumento(new ArgumentoFormal("x", Tipo.INTEIRO))
 				.corpo(soma(ref("x"), vi(1)));
+		
+		// funcao inc(x)
+		//    x = x + 1;
+		
 		//Insere-a no ambiente de execucao
 		AmbienteExecucao.instance().declararFuncao(inc);
 		
 		//Aplica essa nova funcao?
 		ExpressaoAplicacao ap = (new ExpressaoAplicacao())
 				.nome("inc").parametro(soma(vi(3), vi(2)));
+		
+		// inc(3 + 2)
+		
 		//Era pra ter dado 6
 		Assert.assertEquals(new ValorInteiro(6), ap.avaliar());
 	}
@@ -41,7 +48,10 @@ public class TesteExpressaoAplicacao extends TesteUtil {
 //		
 //		DeclFuncao fat = (new DeclFuncao()).nome("fat")
 //				.argumento(new ArgumentoFormal("x", Tipo.INTEIRO))
-//				.corpo(If(igual(ref("x"), vi(0)), let("x", vi(1), soma(ref("x"),vi(0))), mult(ref("x") ,sub(auxFat.getCorpo(),vi(1)))));
+//				.corpo(If(igual(ref("x"), vi(0)), 
+//						  let("x", vi(1), soma(ref("x"),vi(0))), 
+//						  mult(ref("x") ,sub(auxFat.getCorpo(),vi(1)))));
+		
 //		//(new ExpressaoAplicacao()).nome("fat").parametro(sub(ref("x"),vi(1))).avaliar()
 		
 //		DeclFuncao fat = (new DeclFuncao()).nome("fat")

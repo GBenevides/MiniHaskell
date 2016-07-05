@@ -8,6 +8,7 @@ import br.unb.cic.mh.visitor.Visitor;
  * 
  * @author rbonifacio
  */
+
 public class ExpressaoRefId implements Expressao {
 
 	private String id;
@@ -22,7 +23,7 @@ public class ExpressaoRefId implements Expressao {
 		if(exp != null) {
 			return exp.tipo();
 		}
-		throw new RuntimeException("Variaval: " + id + " nao declarada");
+		throw new RuntimeException("Variavel: " + id + " nao declarada");
 	}
 
 	@Override
@@ -31,7 +32,7 @@ public class ExpressaoRefId implements Expressao {
 		if(exp != null) {
 			return exp.checarTipo();
 		}
-		throw new RuntimeException("Variaval: " + id + " nao declarada");
+		throw new RuntimeException("Variavel: " + id + " nao declarada");
 	}
 
 	@Override
@@ -40,11 +41,15 @@ public class ExpressaoRefId implements Expressao {
 		if(exp != null) {
 			return exp.avaliar();
 		}
-		throw new RuntimeException("Variaval: " + id + " nao declarada");
+		throw new RuntimeException("Variavel: " + id + " nao declarada");
 	}
 	
 	@Override
 	public void aceitar(Visitor v) {
 		v.visitar(this);
+	}
+
+	public String getId() {
+		return id;
 	}
 }

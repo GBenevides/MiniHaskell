@@ -1,5 +1,6 @@
 package br.unb.cic.mh.visitor;
 
+import br.unb.cic.mh.Expressao;
 import br.unb.cic.mh.ExpressaoAnd;
 import br.unb.cic.mh.ExpressaoAplicacao;
 import br.unb.cic.mh.ExpressaoDiferente;
@@ -18,122 +19,238 @@ import br.unb.cic.mh.ExpressaoOr;
 import br.unb.cic.mh.ExpressaoRefId;
 import br.unb.cic.mh.ExpressaoSoma;
 import br.unb.cic.mh.ExpressaoSubtracao;
+import br.unb.cic.mh.Tipo;
 import br.unb.cic.mh.ValorBooleano;
 import br.unb.cic.mh.ValorInteiro;
+import br.unb.cic.mh.ValorLista;
+
+//enum Tipo {
+//	BOOLEANO,
+//	INTEIRO,
+//	ERRO;
+//}
 
 public class PPVisitor implements Visitor {
+	
+	@Override
+	public void visitar(ValorInteiro exp) {
+		System.out.print(exp.getValor());
+	}
+
+	@Override
+	public void visitar(ValorBooleano exp) {
+		if(exp.getValor()) {
+			System.out.print("True");
+		}
+		else {
+			System.out.print("False");
+		}
+	}
+	
+
+	@Override
+	public void visitar(ValorLista exp) {
+		ValorLista it = exp;
+		System.out.print("(");
+		
+		while (it != null){	
+			System.out.print(it.getValor());
+			it = it.getNext();
+			
+			if(it != null)
+				System.out.print(", ");
+		}
+		
+		System.out.print(")");
+	}
 
 	@Override
 	public void visitar(ExpressaoIfThenElse exp) {
-		
+		System.out.print("If (");
+		exp.getCondicao().aceitar(this);
+		System.out.print("), then (");
+		exp.getClausulaThen().aceitar(this);
+		System.out.print("), else (");
+		exp.getClausulaElse().aceitar(this);
+		System.out.print(")");
 	}
 
 	@Override
 	public void visitar(ExpressaoLet exp) {
-		// TODO Auto-generated method stub
-		
+		System.out.print("Let (" + exp.getId() + " = ");
+		exp.getExp().aceitar(this);
+		System.out.print(") in (");
+		exp.getCorpo().aceitar(this);
+		System.out.print(")");		
 	}
 
 	@Override
 	public void visitar(ExpressaoSoma exp) {
 		System.out.print("(");
 		exp.getSub1().aceitar(this);
-		System.out.println(" + ");
+		System.out.print(" + ");
 		exp.getSub2().aceitar(this);
-		System.out.println(")");
+		System.out.print(")");
 	}
 
 	@Override
 	public void visitar(ExpressaoRefId exp) {
-		// TODO Auto-generated method stub
+		System.out.print("(" + exp.getId());
 		
+		Tipo t1 = exp.tipo();
+		
+		System.out.print(" = ");
+		//exp.tipo().equals(Tipo.INTEIRO);
+		
+		if(t1.equals(Tipo.INTEIRO)){
+			System.out.print(((ValorInteiro) exp.avaliar()).getValor());
+		}
+		
+		else if(t1.equals(Tipo.BOOLEANO)){
+			System.out.print(((ValorBooleano) exp.avaliar()).getValor());
+		}
+		
+		System.out.print(")");
+		
+		/*
+		 
+		switch(exp.tipo()){
+		}
+		 
+		 */
+	
 	}
 
 	@Override
 	public void visitar(ExpressaoAplicacao exp) {
-		// TODO Auto-generated method stub
+				
+		System.out.print(exp.getNome() + "(");
 		
-	}
-
-	@Override
-	public void visitar(ValorInteiro exp) {
-		System.out.println(exp.getValor());
-	}
-
-	@Override
-	public void visitar(ValorBooleano exp) {
-		if(exp.getValor()) {
-			System.out.println("True");
-		}
-		else {
-			System.out.println("False");
-		}
-	}
-
+		
+	} // TODO: PPVisitor - Apply - Tenho medo dessa daqui
+	
 	@Override
 	public void visitar(ExpressaoSubtracao exp) {
-		// TODO Auto-generated method stub
+		System.out.print("(");
+		exp.getSub1().aceitar(this);
+		System.out.print(" - ");
+		exp.getSub2().aceitar(this);
+		System.out.print(")");
 		
 	}
 
 	@Override
 	public void visitar(ExpressaoIgualdade exp) {
-		// TODO Auto-generated method stub
-		
+		System.out.print("(");
+		exp.getSub1().aceitar(this);
+		System.out.print(" == ");
+		exp.getSub2().aceitar(this);
+		System.out.print(")");
 	}
 
 	@Override
 	public void visitar(ExpressaoAnd exp) {
-		// TODO Auto-generated method stub
-		
+		System.out.print("(");
+		exp.getSub1().aceitar(this);
+		System.out.println(" && ");
+		exp.getSub2().aceitar(this);
+		System.out.println(")");
 	}
 
 	@Override
 	public void visitar(ExpressaoMultiplicacao exp) {
+		System.out.print("(");
+		exp.getSub1().aceitar(this);
+		System.out.print(" * ");
+		exp.getSub2().aceitar(this);
+		System.out.print(")");
 		
 	}
+	
+	@Override
 	public void visitar(ExpressaoOr exp) {
-		// TODO Auto-generated method stub
-		
+		System.out.print("(");
+		exp.getSub1().aceitar(this);
+		System.out.print(" || ");
+		exp.getSub2().aceitar(this);
+		System.out.print(")");
 	}
 
 	@Override
 	public void visitar(ExpressaoDivisao exp) {
+		System.out.print("(");
+		exp.getSub1().aceitar(this);
+		System.out.print(" / ");
+		exp.getSub2().aceitar(this);
+		System.out.print(")");
 		
 	}
+	
+	@Override
 	public void visitar(ExpressaoNot exp) {
-		// TODO Auto-generated method stub
-		
+		System.out.print("(");
+		System.out.print("!");
+		exp.getSub().aceitar(this);
+		System.out.print(")");
 	}
 
 	@Override
 	public void visitar(ExpressaoDiferente exp) {
+		System.out.print("(");
+		exp.getSub1().aceitar(this);
+		System.out.print(" != ");
+		exp.getSub2().aceitar(this);
+		System.out.print(")");
 		
 	}
+	
+	@Override
 	public void visitar(ExpressaoMenor exp) {
-		// TODO Auto-generated method stub
+		System.out.print("(");
+		exp.getSub1().aceitar(this);
+		System.out.print(" < ");
+		exp.getSub2().aceitar(this);
+		System.out.print(")");
 		
 	}
 
 	@Override
 	public void visitar(ExpressaoMenorIgual exp) {
-		// TODO Auto-generated method stub
+		System.out.print("(");
+		exp.getSub1().aceitar(this);
+		System.out.print(" <= ");
+		exp.getSub2().aceitar(this);
+		System.out.print(")");
 		
 	}
 
 	@Override
 	public void visitar(ExpressaoMaiorIgual exp) {
+		System.out.print("(");
+		exp.getSub1().aceitar(this);
+		System.out.print(" >= ");
+		exp.getSub2().aceitar(this);
+		System.out.print(")");
 		
 	}
+	
+	@Override
 	public void visitar(ExpressaoMaior exp) {
-		// TODO Auto-generated method stub
-		
+		System.out.print("(");
+		exp.getSub1().aceitar(this);
+		System.out.print(" > ");
+		exp.getSub2().aceitar(this);
+		System.out.print(")");
 	}
 
 	@Override
-	public void visitar(ExpressaoFatorial expressaoFatorial) {
-		// TODO Auto-generated method stub
+	public void visitar(ExpressaoFatorial exp) {
+		System.out.print("(");
+		exp.getSub().aceitar(this);
+		System.out.print("!");
+		System.out.print(")");
 		
 	}
+
 
 }

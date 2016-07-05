@@ -9,6 +9,8 @@ public class TesteExpressaoDivisao {
 		ValorInteiro v5  = new ValorInteiro(5);
 		ValorInteiro v10 = new ValorInteiro(10);
 		
+		// Teste: (10 / 5)
+		
 		ExpressaoDivisao mult = new ExpressaoDivisao(v10, v5);
 		
 		ValorInteiro res = (ValorInteiro)mult.avaliar();

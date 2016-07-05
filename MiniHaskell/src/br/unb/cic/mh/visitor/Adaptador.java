@@ -20,8 +20,21 @@ import br.unb.cic.mh.ExpressaoSoma;
 import br.unb.cic.mh.ExpressaoSubtracao;
 import br.unb.cic.mh.ValorBooleano;
 import br.unb.cic.mh.ValorInteiro;
+import br.unb.cic.mh.ValorLista;
 
 public class Adaptador implements Visitor {
+	
+	@Override
+	public void visitar(ValorInteiro exp) {
+	}
+
+	@Override
+	public void visitar(ValorBooleano exp) {
+	}
+
+	@Override
+	public void visitar(ValorLista exp) {		
+	}
 
 	@Override
 	public void visitar(ExpressaoIfThenElse exp) {
@@ -41,14 +54,6 @@ public class Adaptador implements Visitor {
 
 	@Override
 	public void visitar(ExpressaoAplicacao exp) {
-	}
-
-	@Override
-	public void visitar(ValorInteiro exp) {
-	}
-
-	@Override
-	public void visitar(ValorBooleano exp) {
 	}
 
 	@Override
@@ -96,9 +101,7 @@ public class Adaptador implements Visitor {
 	}
 
 	@Override
-	public void visitar(ExpressaoFatorial expressaoFatorial) {
-		// TODO Auto-generated method stub
-		
+	public void visitar(ExpressaoFatorial exp) {
 	}
 
 }
