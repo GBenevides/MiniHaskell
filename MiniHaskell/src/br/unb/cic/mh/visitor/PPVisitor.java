@@ -1,5 +1,8 @@
 package br.unb.cic.mh.visitor;
 
+import java.util.List;
+import java.util.ListIterator;
+
 import br.unb.cic.mh.Expressao;
 import br.unb.cic.mh.ExpressaoAnd;
 import br.unb.cic.mh.ExpressaoAplicacao;
@@ -21,6 +24,7 @@ import br.unb.cic.mh.ExpressaoSoma;
 import br.unb.cic.mh.ExpressaoSubtracao;
 import br.unb.cic.mh.Tipo;
 import br.unb.cic.mh.ValorBooleano;
+import br.unb.cic.mh.ValorConcreto;
 import br.unb.cic.mh.ValorInteiro;
 import br.unb.cic.mh.ValorLista;
 
@@ -54,7 +58,12 @@ public class PPVisitor implements Visitor {
 		System.out.print("(");
 		
 		while (it != null){	
-			System.out.print(it.getValor());
+			//System.out.print(((ValorConcreto) it.getValor().avaliar()).getValor());
+			// =
+			//it.getValor().avaliar().aceitar(this);
+			
+			it.getValor().aceitar(this);
+			
 			it = it.getNext();
 			
 			if(it != null)
@@ -99,9 +108,10 @@ public class PPVisitor implements Visitor {
 		
 		Tipo t1 = exp.tipo();
 		
-		System.out.print(" = ");
+		
 		//exp.tipo().equals(Tipo.INTEIRO);
 		
+		System.out.print(" = ");
 		if(t1.equals(Tipo.INTEIRO)){
 			System.out.print(((ValorInteiro) exp.avaliar()).getValor());
 		}
@@ -109,6 +119,9 @@ public class PPVisitor implements Visitor {
 		else if(t1.equals(Tipo.BOOLEANO)){
 			System.out.print(((ValorBooleano) exp.avaliar()).getValor());
 		}
+		
+		else
+			System.out.print("null");
 		
 		System.out.print(")");
 		
@@ -126,6 +139,17 @@ public class PPVisitor implements Visitor {
 				
 		System.out.print(exp.getNome() + "(");
 		
+		//List<Expressao> it = exp.getParametros();
+		
+		ListIterator<Expressao> ite = exp.getParametros().listIterator();
+		
+		while(ite.hasNext()){
+			Expressao temp = ite.next();
+			temp.aceitar(this);
+		}
+			
+			
+		System.out.print(")");
 		
 	} // TODO: PPVisitor - Apply - Tenho medo dessa daqui
 	
@@ -152,9 +176,9 @@ public class PPVisitor implements Visitor {
 	public void visitar(ExpressaoAnd exp) {
 		System.out.print("(");
 		exp.getSub1().aceitar(this);
-		System.out.println(" && ");
+		System.out.print(" && ");
 		exp.getSub2().aceitar(this);
-		System.out.println(")");
+		System.out.print(")");
 	}
 
 	@Override

@@ -25,6 +25,7 @@ public abstract class ValorConcreto<T> implements Valor {
 	@Override
 	public boolean equals(Object outroValor) {
 		if(outroValor instanceof ValorConcreto) {
+			@SuppressWarnings("rawtypes")
 			ValorConcreto valorConcreto = (ValorConcreto) outroValor;
 			return valorConcreto.valor.equals(valor);
 		}

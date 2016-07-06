@@ -4,7 +4,7 @@ import br.unb.cic.mh.Expressao;
 import br.unb.cic.mh.ExpressaoIfThenElse;
 import br.unb.cic.mh.ValorBooleano;
 
-public class Refactoring extends  Adaptador {
+public class Refactoring extends Adaptador {
 
 	public Expressao res; 
 	

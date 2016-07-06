@@ -13,6 +13,10 @@ public abstract class TesteUtil {
 	public ExpressaoMultiplicacao mult(Expressao exp1, Expressao exp2) {
 		return new ExpressaoMultiplicacao(exp1, exp2);
 	}
+	
+	public ExpressaoDivisao div(Expressao exp1, Expressao exp2) {
+		return new ExpressaoDivisao(exp1, exp2);
+	}
 
 	public ExpressaoFatorial fat(Expressao exp1) {
 		return new ExpressaoFatorial(exp1);
@@ -22,8 +26,36 @@ public abstract class TesteUtil {
 		return new ExpressaoIgualdade(exp1, exp2);
 	}
 	
+	public ExpressaoDiferente dif(Expressao exp1, Expressao exp2) {
+		return new ExpressaoDiferente(exp1, exp2);
+	}
+	
+	public ExpressaoMenor menor(Expressao exp1, Expressao exp2) {
+		return new ExpressaoMenor(exp1, exp2);
+	}
+	
+	public ExpressaoMenorIgual menorIgual(Expressao exp1, Expressao exp2) {
+		return new ExpressaoMenorIgual(exp1, exp2);
+	}
+	
+	public ExpressaoMaior maior(Expressao exp1, Expressao exp2) {
+		return new ExpressaoMaior(exp1, exp2);
+	}
+	
+	public ExpressaoMaiorIgual maiorIgual(Expressao exp1, Expressao exp2) {
+		return new ExpressaoMaiorIgual(exp1, exp2);
+	}
+	
 	public ExpressaoAnd and(Expressao exp1, Expressao exp2) {
 		return new ExpressaoAnd(exp1, exp2);
+	}
+	
+	public ExpressaoOr or(Expressao exp1, Expressao exp2) {
+		return new ExpressaoOr(exp1, exp2);
+	}
+	
+	public ExpressaoNot not(Expressao exp){
+		return new ExpressaoNot(exp);
 	}
 	
 	public ExpressaoRefId ref(String id) {
