@@ -32,6 +32,7 @@ public class ExpressaoIgualdade extends ExpressaoBinaria{
 		return tipo().equals(Tipo.BOOLEANO);
 	}
 
+	@SuppressWarnings("rawtypes")
 	@Override
 	public Valor avaliar() {
 		ValorConcreto v1 = (ValorConcreto) sub1.avaliar();

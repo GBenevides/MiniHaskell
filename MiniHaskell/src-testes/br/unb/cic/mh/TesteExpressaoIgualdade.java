@@ -15,7 +15,7 @@ public class TesteExpressaoIgualdade {
 		ExpressaoIgualdade igualdade = new ExpressaoIgualdade(vT, vF);
 		
 		ValorBooleano res = (ValorBooleano)igualdade.avaliar();
-		boolean expectedRes = false; //Resultado esperado
+		//boolean expectedRes = false; //Resultado esperado
 		
 		Assert.assertEquals(new Boolean(false), res.getValor());
 	
@@ -55,7 +55,6 @@ public class TesteExpressaoIgualdade {
 		//assertTrue("Assert igualdade inteira complexa", (res.getValor() == expectedRes));
 		
 	}
-	
 
 	/*
 	@Test

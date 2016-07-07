@@ -11,6 +11,8 @@ public class TesteExpressaoMenorIgual {
 		ValorInteiro v7 = new ValorInteiro(7);
 		ValorInteiro v4 = new ValorInteiro(4);
 		
+		// Teste: (7 <= 4)
+		
 		ExpressaoMenorIgual igualdade = new ExpressaoMenorIgual(v7, v4);
 		
 		ValorBooleano res = (ValorBooleano)igualdade.avaliar();
@@ -26,6 +28,7 @@ public class TesteExpressaoMenorIgual {
 		ValorInteiro v4a = new ValorInteiro(4);
 		ValorInteiro v4b = new ValorInteiro(4);
 	
+		// Teste: (4 <= 4) (4 <= 7)
 		
 		ExpressaoMenorIgual igual1 = new ExpressaoMenorIgual(v4a, v4b);
 		ExpressaoMenorIgual igual2 = new ExpressaoMenorIgual(v4a, v7);

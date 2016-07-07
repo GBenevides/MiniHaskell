@@ -1,12 +1,11 @@
 package br.unb.cic.mh;
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
 
 import br.unb.cic.mh.visitor.PPVisitor;
 
 public class TestePPVisitor extends TesteUtil{
+	
 	PPVisitor Printer = new PPVisitor();
 
 	@Test
@@ -27,6 +26,7 @@ public class TestePPVisitor extends TesteUtil{
 		System.out.println();
 	}
 
+	@SuppressWarnings("rawtypes")
 	@Test
 	public void testVisitarValorLista() {
 //		
@@ -42,24 +42,29 @@ public class TestePPVisitor extends TesteUtil{
 		Lint.add(new ValorLista(soma(vi(3), vi(8))));
 		Lint.add(new ValorLista(vi(2), null));
 		
-		System.out.println("\nTamanho da lista: " + Lint.tamanho().getValor());
+		System.out.println("\nTamanho da lista de inteiros: " + Lint.tamanho().getValor());
 		
-		System.out.println("\nElemento na Posicao 2 da lista de inteiros: " + ((ValorConcreto) Lint.position(vi(1)).avaliar()).getValor());
+		System.out.println("Tamanho da lista de booleanos: " + Lint.tamanho().getValor());
+		
+		System.out.println("Elemento na Posicao 2 da lista de inteiros: " + ((ValorConcreto) Lint.position(vi(1)).avaliar()).getValor());
 		
 		ValorLista Lbool = new ValorLista(vb(true));
 		Lbool.add(new ValorLista(vb(false)));
 		Lbool.add(new ValorLista(vb(false)));
 		
-		System.out.println("\nElemento na Posicao 2 da lista de booleanos: " + ((ValorConcreto) Lbool.position(vi(1)).avaliar()).getValor());
+		System.out.println("Elemento na Posicao 2 da lista de booleanos: " + ((ValorConcreto) Lbool.position(vi(1)).avaliar()).getValor());
 		
-		System.out.println();
 		System.out.print("Teste lista de inteiros: ");
 		Printer.visitar(Lint);
 		System.out.println();
 		
+		// ((1 - 7), (3 + 8), 2)
+		
 		System.out.print("Teste lista de booleanos: ");
 		Printer.visitar(Lbool);
 		System.out.println();		
+		
+		// (True, False, False)
 	}
 
 	@Test
@@ -73,6 +78,8 @@ public class TestePPVisitor extends TesteUtil{
 		System.out.print("Teste Comandos de Decisão: ");
 		Printer.visitar(Comp);
 		System.out.println();
+		
+		// If ((True == False)), then ((5 * 10)), else ((10 - 5))
 		
 		System.out.print("Teste Comandos de Decisão (then): ");
 		Comp.getClausulaThen().aceitar(Printer);
@@ -100,6 +107,8 @@ public class TestePPVisitor extends TesteUtil{
 		Printer.visitar(testLet);
 		System.out.println();
 		
+		// Let (ref_id = 5) in (((ref_id = 5) + 7))
+		
 		System.out.print("Teste Let (avaliada): ");
 		testLet.avaliar().aceitar(Printer);
 		System.out.println();
@@ -121,6 +130,7 @@ public class TestePPVisitor extends TesteUtil{
 		//let("x", vi(0), soma(refI, vi(0)));
 		Printer.visitar(refI);
 		System.out.println();
+		// (x = 0)
 	}
 
 	@Test
@@ -145,9 +155,6 @@ public class TestePPVisitor extends TesteUtil{
 		System.out.print("\nTeste Aplicacao: ");
 		Printer.visitar(ap);
 		System.out.println();
-		
-		//fail("Not yet implemented");
-		// TODO: TestePPVisitor - Apply - Tenho medo dessa daqui
 	}
 
 	@Test
@@ -212,11 +219,11 @@ public class TestePPVisitor extends TesteUtil{
 
 	@Test
 	public void testVisitarExpressaoDiferente() {
-		System.out.print("\nTeste Diferente de Inteiros: ");
+		System.out.print("\nTeste Diferenca de Inteiros: ");
 		Printer.visitar(dif(vi(2), vi(1)));
 		// (2 != 1)
 		
-		System.out.print("\nTeste Diferente de Booleanos: ");
+		System.out.print("\nTeste Diferenca de Booleanos: ");
 		Printer.visitar(dif(vb(true), vb(true)));
 		System.out.println();
 		// (True != True);

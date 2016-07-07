@@ -18,8 +18,6 @@ public class TesteExpressaoMenor {
 		ValorBooleano res = (ValorBooleano)menor.avaliar();
 		
 		assertEquals(new Boolean(false), res.getValor());
-		
-		//fail("Not yet implemented");
 	}
 	
 //	@Test

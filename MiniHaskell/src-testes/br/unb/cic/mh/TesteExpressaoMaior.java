@@ -19,8 +19,6 @@ public class TesteExpressaoMaior {
 		ValorBooleano res = (ValorBooleano)maior.avaliar();
 		
 		assertEquals(new Boolean(true), res.getValor());
-		
-		//fail("Not yet implemented");
 	}
 
 	/*

@@ -1,7 +1,5 @@
 package br.unb.cic.mh;
 
-import java.util.List;
-
 import br.unb.cic.mh.visitor.Visitor;
 
 public class ValorLista extends ValorConcreto<Expressao> {

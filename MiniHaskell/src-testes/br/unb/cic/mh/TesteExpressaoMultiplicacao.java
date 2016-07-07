@@ -10,6 +10,8 @@ public class TesteExpressaoMultiplicacao {
 		ValorInteiro v5  = new ValorInteiro(5);
 		ValorInteiro v10 = new ValorInteiro(10);
 		
+		// Teste: (5 * 10)
+		
 		ExpressaoMultiplicacao mult = new ExpressaoMultiplicacao(v5, v10);
 		
 		ValorInteiro res = (ValorInteiro)mult.avaliar();
@@ -21,6 +23,8 @@ public class TesteExpressaoMultiplicacao {
 		ValorInteiro v5  = new ValorInteiro(5);
 		ValorInteiro v10 = new ValorInteiro(10);
 		ValorInteiro v20 = new ValorInteiro(20);
+		
+		// Teste: ((5 * 10) * 20)
 		
 		ExpressaoMultiplicacao mult1 = new ExpressaoMultiplicacao(v5, v10);
 		ExpressaoMultiplicacao mult2 = new ExpressaoMultiplicacao(mult1, v20);

@@ -3,10 +3,9 @@ package br.unb.cic.mh;
 import br.unb.cic.mh.visitor.Visitor;
 
 public class ExpressaoMultiplicacao extends ExpressaoBinaria{
-
+	
 	public ExpressaoMultiplicacao(Expressao s1, Expressao s2) {
 		super(s1, s2);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override

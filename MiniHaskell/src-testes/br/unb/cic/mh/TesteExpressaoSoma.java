@@ -3,8 +3,6 @@ package br.unb.cic.mh;
 import org.junit.Assert;
 import org.junit.Test;
 
- 
-
 public class TesteExpressaoSoma {
 
 	@Test

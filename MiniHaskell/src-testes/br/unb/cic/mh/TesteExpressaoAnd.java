@@ -22,7 +22,6 @@ public class TesteExpressaoAnd {
 		Assert.assertEquals(new Boolean(true), res.getValor());
 		Assert.assertTrue("Assert and simples", (res.getValor() == expectedRes));		
 		
-		//fail("Not yet implemented");
 	}
 	
 	@Test
@@ -42,7 +41,6 @@ public class TesteExpressaoAnd {
 		Assert.assertEquals(new Boolean(false), res.getValor());
 		Assert.assertTrue("Assert and complexo", (res.getValor() == expectedRes));	
 		
-		//fail("Not yet implemented");
 	}
 
 	/*

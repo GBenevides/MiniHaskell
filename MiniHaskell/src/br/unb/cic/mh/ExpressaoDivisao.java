@@ -6,7 +6,6 @@ public class ExpressaoDivisao extends ExpressaoBinaria{
 
 	public ExpressaoDivisao(Expressao s1, Expressao s2) {
 		super(s1, s2);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override

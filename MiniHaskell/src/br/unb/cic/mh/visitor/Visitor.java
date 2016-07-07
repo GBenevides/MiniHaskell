@@ -42,7 +42,7 @@ public interface Visitor {
 	public void visitar(ExpressaoNot exp);
 	public void visitar(ExpressaoMenor exp);
 	public void visitar(ExpressaoMaior exp);
-	public void visitar(ExpressaoFatorial expressaoFatorial);
-	public void visitar(ValorLista valorLista);
+	public void visitar(ExpressaoFatorial exp);
+	public void visitar(ValorLista exp);
 	
 }

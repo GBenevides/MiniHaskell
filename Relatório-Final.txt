@@ -1,0 +1,43 @@
+Projeto Mini-Haskell
+-
+-
+-
+Grupo:
+
+Gabriel Benevides C. Chaves - 14/0139907
+
+Rafael Batista Menegassi - 14/0159355
+
+Thales Gonçalves Grilo - 14/0163603
+
+-
+-
+-
+Features:
+
+-> Expressões lógicas, envolvendo inteiros e de operadores relacionais todas implementadas e testadas;
+
+-> Testes Let e Aplicação de Função:
+
+	-> Expressão "let x = 10 in let x = 5 in x + x" testada, avaliando um resultado de 10, pois o "x = 5" sobrepõe o "x = 10";
+
+	-> Para o tratamento da Expressão Fatorial, foi criada uma nova classe, ExpressaoFatorial.java, sendo esta recursiva e funcional. 
+	   Testes implementados corretamente;
+
+-> Foram escritos mais dois testes para a Expressão Aplicação de Função: função de decremento e função de calcular média de dois números;
+
+-> Visitors corrigidos. Teste de PPVisitor corretamente executado;
+
+-> Suporte ao tipo Lista corretamente incluído, sendo um tipo recursivo. Um ValorLista é composto por Expressões e por novos ValorLista's.
+
+-> Funções que manipulam listas corretamente implementadas
+	
+	-> "add": adiciona certo termo em certa lista;
+	
+	-> "tamanho": verifica o tamanho de certa lista;
+
+	-> "position": dada certa posição, verifica-se o conteúdo da lista nessa posição;
+
+-
+-
+-

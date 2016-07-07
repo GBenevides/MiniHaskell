@@ -1,7 +1,7 @@
 package br.unb.cic.mh;
 
-
 public abstract class TesteUtil {
+	
 	public ExpressaoSoma soma(Expressao exp1, Expressao exp2) {
 		return new ExpressaoSoma(exp1, exp2);
 	}

@@ -3,10 +3,13 @@ package br.unb.cic.mh;
 import br.unb.cic.mh.visitor.Visitor;
 
 public class ExpressaoMaiorIgual extends ExpressaoBinaria{
+	
+	//	Tipagem
+	//	Comparando inteiro com inteiro...
+	//	Retornando booleano.
 
 	public ExpressaoMaiorIgual(Expressao s1, Expressao s2) {
 		super(s1, s2);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override

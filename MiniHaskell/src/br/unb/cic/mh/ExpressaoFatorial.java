@@ -9,6 +9,7 @@ public class ExpressaoFatorial extends ExpressaoUnaria {
 	public ExpressaoFatorial(Expressao s) {
 		super(s);
 	}
+	
 	@Override
 	public Tipo tipo() {
 		Tipo t1 = sub.tipo();	
@@ -40,31 +41,8 @@ public class ExpressaoFatorial extends ExpressaoUnaria {
 //				(new ExpressaoMultiplicacao(new ExpressaoSoma(new ExpressaoRefId("x"),new ValorInteiro(0)) ,fat(v1))));
 //		
 //				
+		
 		return ans;
-		
-		/*
-		ValorInteiro v1 = (ValorInteiro) new ExpressaoSubtracao(v,new ValorInteiro(1)).avaliar();
-		System.out.println(v1.getValor());
-		ExpressaoIfThenElse fat = new ExpressaoIfThenElse(new ExpressaoMenorIgual(new ExpressaoRefId("x"), new ValorInteiro(0)), 
-				new ExpressaoSoma(new ExpressaoRefId("x"), new ValorInteiro(0)) , 
-				(new ExpressaoMultiplicacao(new ExpressaoSoma(new ExpressaoRefId("x"),new ValorInteiro(0)) ,fat(v1))));
-		
-		
-		DeclFuncao func = (new DeclFuncao()).nome("fat")
-				.argumento(new ArgumentoFormal("x", Tipo.INTEIRO))
-				.corpo(fat);
-		
-		AmbienteExecucao.instance().declararFuncao(func);
-		
-		//Aplica essa nova funcao?
-		ExpressaoAplicacao ap = (new ExpressaoAplicacao())
-				.nome("inc").parametro(v1);
-		
-		ValorInteiro ans = (ValorInteiro) ap.avaliar();
-		
-		System.out.println("Ans: "+ans.getValor());
-		*/
-		
 	
 	}
 	

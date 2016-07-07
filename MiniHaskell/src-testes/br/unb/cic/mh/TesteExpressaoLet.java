@@ -2,7 +2,6 @@ package br.unb.cic.mh;
 
 import static org.junit.Assert.*;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 public class TesteExpressaoLet extends TesteUtil{

@@ -13,7 +13,7 @@ public class TesteExpressaoDiferente {
 		ExpressaoDiferente igualdade = new ExpressaoDiferente(vT, vF);
 		
 		ValorBooleano res = (ValorBooleano)igualdade.avaliar();
-		boolean expectedRes = true; //Resultado esperado
+		//boolean expectedRes = true; //Resultado esperado
 		
 		Assert.assertEquals(new Boolean(true), res.getValor());
 	

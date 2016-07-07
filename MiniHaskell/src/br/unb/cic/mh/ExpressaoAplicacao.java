@@ -31,13 +31,11 @@ public class ExpressaoAplicacao implements Expressao {
 
 	@Override
 	public Tipo tipo() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public boolean checarTipo() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 

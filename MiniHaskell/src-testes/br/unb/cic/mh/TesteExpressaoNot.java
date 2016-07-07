@@ -4,8 +4,6 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import junit.framework.Assert;
-
 public class TesteExpressaoNot {
 
 	@Test
@@ -19,8 +17,6 @@ public class TesteExpressaoNot {
 		ValorBooleano res = (ValorBooleano)not.avaliar();
 		
 		assertEquals(new Boolean(false), res.getValor());
-		
-		//fail("Not yet implemented");
 	}
 	
 	@Test
@@ -35,8 +31,7 @@ public class TesteExpressaoNot {
 		ValorBooleano res = (ValorBooleano)not2.avaliar();
 		
 		assertEquals(new Boolean(true), res.getValor());
-		
-		//fail("Not yet implemented");
+
 	}
 	
 	/*

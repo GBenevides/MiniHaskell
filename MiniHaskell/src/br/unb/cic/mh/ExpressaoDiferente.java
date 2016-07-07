@@ -6,7 +6,6 @@ public class ExpressaoDiferente extends ExpressaoBinaria{
 
 	public ExpressaoDiferente(Expressao s1, Expressao s2) {
 		super(s1, s2);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
@@ -28,6 +27,7 @@ public class ExpressaoDiferente extends ExpressaoBinaria{
 		return tipo().equals(Tipo.BOOLEANO);
 	}
 
+	@SuppressWarnings("rawtypes")
 	@Override
 	public Valor avaliar() {
 		ValorConcreto v1 = (ValorConcreto)sub1.avaliar();

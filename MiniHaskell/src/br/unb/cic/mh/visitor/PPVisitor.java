@@ -1,6 +1,5 @@
 package br.unb.cic.mh.visitor;
 
-import java.util.List;
 import java.util.ListIterator;
 
 import br.unb.cic.mh.Expressao;
@@ -24,7 +23,6 @@ import br.unb.cic.mh.ExpressaoSoma;
 import br.unb.cic.mh.ExpressaoSubtracao;
 import br.unb.cic.mh.Tipo;
 import br.unb.cic.mh.ValorBooleano;
-import br.unb.cic.mh.ValorConcreto;
 import br.unb.cic.mh.ValorInteiro;
 import br.unb.cic.mh.ValorLista;
 
@@ -151,7 +149,7 @@ public class PPVisitor implements Visitor {
 			
 		System.out.print(")");
 		
-	} // TODO: PPVisitor - Apply - Tenho medo dessa daqui
+	}
 	
 	@Override
 	public void visitar(ExpressaoSubtracao exp) {

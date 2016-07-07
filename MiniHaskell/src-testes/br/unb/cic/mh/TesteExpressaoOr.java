@@ -1,7 +1,5 @@
 package br.unb.cic.mh;
 
-import static org.junit.Assert.*;
-
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -22,8 +20,6 @@ public class TesteExpressaoOr {
 
 		Assert.assertEquals(new Boolean(true), res.getValor());
 		Assert.assertTrue("Assert or simples", (res.getValor() == expectedRes));		
-		
-		//fail("Not yet implemented");
 	}
 	
 	@Test
@@ -42,8 +38,6 @@ public class TesteExpressaoOr {
 		
 		Assert.assertEquals(new Boolean(true), res.getValor());
 		Assert.assertTrue("Assert or complexo", (res.getValor() == expectedRes));	
-		
-		//fail("Not yet implemented");
 	}
 
 	/*
